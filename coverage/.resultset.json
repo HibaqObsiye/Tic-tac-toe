@@ -6,6 +6,8 @@
           1,
           null,
           1,
+          1,
+          1,
           null,
           null,
           null
@@ -15,6 +17,23 @@
         "lines": [
           1,
           1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/hibaqobsiye/Tic-tac-toe/spec/game_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           null,
@@ -58,6 +77,6 @@
         ]
       }
     },
-    "timestamp": 1671826075
+    "timestamp": 1671827676
   }
 }
