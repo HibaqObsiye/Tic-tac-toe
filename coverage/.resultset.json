@@ -1,6 +1,27 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/hibaqobsiye/Tic-tac-toe/spec/board_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hibaqobsiye/Tic-tac-toe/lib/board.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/hibaqobsiye/Tic-tac-toe/spec/player_spec.rb": {
         "lines": [
           1,
@@ -37,6 +58,6 @@
         ]
       }
     },
-    "timestamp": 1671823315
+    "timestamp": 1671826075
   }
 }
