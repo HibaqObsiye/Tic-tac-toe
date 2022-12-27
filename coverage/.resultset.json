@@ -20,20 +20,60 @@
           1,
           1,
           null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
           null
         ]
       },
       "/Users/hibaqobsiye/Tic-tac-toe/spec/game_spec.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hibaqobsiye/Tic-tac-toe/lib/player.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/hibaqobsiye/Tic-tac-toe/lib/game.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          0,
           null,
           null,
           null,
           null,
           null,
           null,
-          null,
-          null,
-          null,
+          1,
+          0,
           null,
           null,
           null,
@@ -61,22 +101,8 @@
           null,
           null
         ]
-      },
-      "/Users/hibaqobsiye/Tic-tac-toe/lib/player.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1671827676
+    "timestamp": 1672097941
   }
 }
