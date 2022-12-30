@@ -1,3 +1,5 @@
+require './lib/board.rb'
+require './lib/game.rb'
 class Game
     def initialize(board, player)
         @board = board
@@ -15,26 +17,30 @@ class Game
         [1, 4, 7]
     ]
 
-    def make_board
-        puts " #{@board[0]} |  #{@board[1]} | #{@board[2]} "
-        puts "-----------"
-        puts " #{@board[3]} |  #{@board[4]} | #{@board[5]} "
-        puts "-----------"
-        puts " #{@board[6]} |  #{@board[7]} | #{@board[8]} "
+    def boards
+        return @board.make_board
     end
 
-    def start(player)
-        puts "give me a number"
-        number = gets.chomp.to_i
-        if number == @board[number]
-            @board.replace(@player.symbol)
-        end
+    def user_input
+        puts "pick a position"
+        @position = gets.chomp.to_i
     end
 
-    def turn
-
-    end
-
+    def start_position
+        user_input
     
-
+        @board.array.map do |x|
+           
+          if @board.array.index(x) == @position
+            @board.array[@position] = @player.symbol
+          end
+        end
+        @board.make_board
+  
+    end  
 end
+player = Player.new(1,"x")
+board = Board.new
+game = Game.new(board, player)
+p game.boards
+game.start_position

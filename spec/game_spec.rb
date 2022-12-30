@@ -4,8 +4,8 @@ require './lib/game.rb'
 
 describe Game do
 
-    # describe 'board' do
-       
-    # end
+    describe 'board' do
+        
+    end
 
 end
