@@ -1,10 +1,14 @@
 require './lib/board.rb'
 require './lib/game.rb'
 class Game
-    def initialize(board, player)
+   PLAYER_ONE = 'X'
+   PLAYER_TWO = 'O'
+
+   attr_reader :player
+
+    def initialize(board)
         @board = board
-        @player = player
-        @turn = 0
+        @player = PLAYER_ONE  
     end
 
     WINNING_COMBINATIONS = [
@@ -17,30 +21,45 @@ class Game
         [1, 4, 7]
     ]
 
-    def boards
+    def print_board
         return @board.make_board
     end
 
-    def user_input
+    def user_input 
         puts "pick a position"
-        @position = gets.chomp.to_i
+        input = gets.chomp.to_i
+        input
     end
 
-    def start_position
-        user_input
-    
-        @board.array.map do |x|
+    def player_turn
+        if @player == PLAYER_ONE
+            @player = PLAYER_TWO
+        else
+            @player = PLAYER_ONE
+        end     
+    end
+
+    def update_board(input)
+        @board.array[input] = @player
+        @board.make_board        
+    end
+
+    # def move
+    #     loop do
+    #         input = user_input
+    #         player_turn
            
-          if @board.array.index(x) == @position
-            @board.array[@position] = @player.symbol
-          end
-        end
-        @board.make_board
-  
-    end  
+    #         update_board(input) 
+    #     end        
+    # end 
+
+   
 end
-player = Player.new(1,"x")
-board = Board.new
-game = Game.new(board, player)
-p game.boards
-game.start_position
+# board = Board.new
+# game = Game.new(board)
+# game.print_board
+# game.move
+
+
+
+

@@ -11,9 +11,7 @@ class Board
         puts "-----------"
         puts " #{@array[6]} |  #{@array[7]} | #{@array[8]} "
     end
-
-   
-
 end
 board = Board.new
 p board.make_board
+
