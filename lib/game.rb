@@ -3,7 +3,7 @@ require './lib/game.rb'
 class Game
    PLAYER_ONE = 'X'
    PLAYER_TWO = 'O'
-   attr_reader :player
+   attr_accessor :player
 
     def initialize(board)
         @board = board
@@ -41,7 +41,7 @@ class Game
 
     def update_board(input)
         @board.array[input - 1] = @player
-        @board.make_board        
+        # @board.make_board        
     end
 
     def move
@@ -86,7 +86,7 @@ class Game
     end
 
     def draw?
-        if @board.array.none? {|x| x.draw?}
+        if @board.array.none? {|x| x.nil?}
             puts "Game is a Draw"
             return true
         end

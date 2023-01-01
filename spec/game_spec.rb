@@ -36,4 +36,27 @@ describe Game do
         end
     end
 
+    describe '#update_board' do
+        context "Player X picks a square" do
+
+          it "shows position X on the board" do
+            board = double(:board)
+            allow(Kernel).to receive(:gets).and_return(1)
+            input = Kernel.gets
+        
+            expect(board).to receive(:array).and_return(["", "", "", "", "", "", "", "", ""])
+            game = Game.new(board)
+            game.update_board(input)
+          end
+      
+          it "updates the board with position X" do  
+            board = double(:board)
+            
+            expect(board).to receive(:array).and_return(['X', "", "", "", "", "", "", "", ""])
+           
+            game = Game.new(board)
+            game.update_board(1)
+          end
+        end
+      end
 end
