@@ -8,7 +8,6 @@ class Game
     def initialize(board)
         @board = board
         @player = PLAYER_ONE 
-        @win = false 
     end
 
     WINNING_COMBINATIONS = [
@@ -41,26 +40,22 @@ class Game
 
     def update_board(input)
         @board.array[input - 1] = @player
-        # @board.make_board        
+        @board.make_board        
     end
 
     def move
         loop do
             break if self.win? || self.draw?
             input = user_input
-            # player_turn
-            # update_board(input) 
 
            pick_another_move if already_taken?(input)
               
             player_turn
-            update_board(input) 
-            
-          
+            update_board(input)       
         end        
     end 
 
-    private 
+    private
 
     def already_taken?(index)
         @board.array[index - 1] ==  PLAYER_ONE  || @board.array[index - 1] ==  PLAYER_TWO 
@@ -86,20 +81,19 @@ class Game
     end
 
     def draw?
-        if @board.array.none? {|x| x.nil?}
+        if @board.array.all? {|x| x != ""}
             puts "Game is a Draw"
             return true
         end
         false
-    end
-    
-   
+    end      
 end
 
-board = Board.new
-game = Game.new(board)
-game.print_board
-game.move
+    # board = Board.new
+    # game = Game.new(board)
+    # game.print_board
+    # game.move
+
 
 
 

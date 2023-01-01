@@ -1,5 +1,5 @@
 class Board
-    attr_accessor :array
+    
     def initialize
      @array = ["","","","","","","","",""] 
     end   

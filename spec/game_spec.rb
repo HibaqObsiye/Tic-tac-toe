@@ -45,18 +45,45 @@ describe Game do
             input = Kernel.gets
         
             expect(board).to receive(:array).and_return(["", "", "", "", "", "", "", "", ""])
+            expect(board).to receive(:make_board).and_return(["", "", "", "", "", "", "", "", ""])
             game = Game.new(board)
             game.update_board(input)
           end
       
           it "updates the board with position X" do  
             board = double(:board)
-            
+
             expect(board).to receive(:array).and_return(['X', "", "", "", "", "", "", "", ""])
+            expect(board).to receive(:make_board).and_return(['X', "", "", "", "", "", "", "", ""])
            
             game = Game.new(board)
             game.update_board(1)
           end
         end
-      end
+    end
+
+    describe "#move " do
+        it "player wins " do
+            board = double(:board)
+            game = Game.new(board)
+        
+            expect(game).to receive(:win?).and_return(true)
+
+            expect(game.move).to eq(nil)
+        end
+
+        context "player draws" do
+            xit "exits the loop and ends the game" do
+             
+              board = double(:board)
+              game = Game.new(board)
+             
+              expect(board).to receive(:array).at_least(:once).and_return(["X", "O", "X", "O", "X", "O", "X", "O", "X"])
+          
+              expect(game).to receive(:draw?).and_return(true)
+            
+              expect(game.move).to eq(nil)
+            end
+          end
+    end
 end
