@@ -86,7 +86,7 @@ class Game
     end
 
     def draw?
-        if @board.array.all?{|x| x != ""}
+        if @board.array.none? {|x| x.draw?}
             puts "Game is a Draw"
             return true
         end
