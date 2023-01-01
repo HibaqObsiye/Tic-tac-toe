@@ -1,7 +1,7 @@
 class Board
     attr_accessor :array
     def initialize
-     @array = [1,2,3,4,5,6,7,8,9] 
+     @array = ["","","","","","","","",""] 
     end   
 
     def make_board
