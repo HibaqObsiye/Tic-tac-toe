@@ -46,7 +46,7 @@ class Game
 
     def move
         loop do
-            break if self.win?
+            break if self.win? || self.draw?
             input = user_input
             # player_turn
             # update_board(input) 
@@ -81,6 +81,14 @@ class Game
                 puts "Game over! Player #{@player} wins!"
                 return true
             end
+        end
+        false
+    end
+
+    def draw?
+        if @board.array.all?{|x| x != ""}
+            puts "Game is a Draw"
+            return true
         end
         false
     end
